@@ -22,12 +22,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
-        cache: 'npm'
+        cache: 'pnpm'
         # monolito
         cache-dependency-path: ./api/pnpm-lock.yaml
-    - name: install
+    - name: install dependencies pnpm
       shell: bash
-      run: npm ci
+      run: pnpm install
     - name: run unit test
       shell: bash
-      run: npm test
+      run: pnpm test
