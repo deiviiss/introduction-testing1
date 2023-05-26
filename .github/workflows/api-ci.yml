@@ -25,6 +25,9 @@ jobs:
         cache: 'pnpm'
         # monolito
         cache-dependency-path: ./api/pnpm-lock.yaml
+    - name: install pnpm
+      shell: bash
+      run: npm install -g pnpm
     - name: install dependencies pnpm
       shell: bash
       run: pnpm install
