@@ -24,7 +24,7 @@ jobs:
         node-version: 18
         cache: 'npm'
         # monolito
-        cache-dependency-path: ./api/package-lock.json
+        cache-dependency-path: ./api/pnpm-lock.json
     - name: install
       shell: bash
       run: npm ci
