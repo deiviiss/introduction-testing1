@@ -25,12 +25,12 @@ jobs:
         cache: 'npm'
         # monolito
         cache-dependency-path: ./api/pnpm-lock.yaml
-    - name: install pnpm
+    - name: Install pnpm
       shell: bash
       run: npm install -g pnpm
-    - name: install dependencies pnpm
+    - name: Install dependencies pnpm
       shell: bash
       run: pnpm install --no-frozen-lockfile
-    - name: run unit test
+    - name: Run unit test
       shell: bash
       run: pnpm test
