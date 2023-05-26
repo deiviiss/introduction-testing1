@@ -30,7 +30,7 @@ jobs:
       run: npm install -g pnpm
     - name: install dependencies pnpm
       shell: bash
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
     - name: run unit test
       shell: bash
       run: pnpm test
