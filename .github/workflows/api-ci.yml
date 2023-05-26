@@ -44,8 +44,8 @@ jobs:
         ports:
           - 27017:27017
         env:
-          MONGO_INITDB_ROOT_USERNAME: test
-          MONGO_INITDB_ROOT_PASSWORD: test123
+          MONGO_INITDB_ROOT_USERNAME: admin
+          MONGO_INITDB_ROOT_PASSWORD: pass
 
     steps:
     - name: Checkout
@@ -68,7 +68,7 @@ jobs:
       run: pnpm test:e2e
       env:
           MONGO_DB_NAME: demo
-          MONGO_URL: mongodb://test:test123@mongo-e2e:27017?retryWrites=true&writeConcern=majority
+          MONGO_URL: mongodb://admin:pass@localhost:27017?retryWrites=true&writeConcern=majority
 
   lint:
     runs-on: ubuntu-latest
