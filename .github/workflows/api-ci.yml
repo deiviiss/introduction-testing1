@@ -38,6 +38,15 @@ jobs:
   e2e-test:
     runs-on: ubuntu-latest
 
+    services:
+      mongo-e2e:
+        image: mongo:4.4
+        ports:
+          - 27017:27017
+        env:
+          MONGO_INITDB_ROOT_USERNAME: test
+          MONGO_INITDB_ROOT_PASSWORD: test123
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -57,6 +66,9 @@ jobs:
     - name: Run e2e test
       shell: bash
       run: pnpm test:e2e
+      env:
+          MONGO_DB_NAME: demo
+          MONGO_URL: mongodb://test:test123@mongo-e2e:27017?retryWrites=true&writeConcern=majority
 
   lint:
     runs-on: ubuntu-latest
