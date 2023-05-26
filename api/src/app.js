@@ -1,5 +1,5 @@
-const express = require('express')
 const cors = require('cors')
+const express = require('express')
 
 const routerApi = require('./routes')
 
@@ -9,7 +9,7 @@ const createApp = () => {
   app.use(express.json())
 
   app.get('/', (req, res) => {
-    res.send('Hello mundo!')
+    res.send('Hello World!')
   })
 
   routerApi(app)
